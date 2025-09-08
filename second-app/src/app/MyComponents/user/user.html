@@ -1,0 +1,16 @@
+<div class="container-fluid">
+<h2>Counter App</h2>
+<input type="number" [(ngModel)]="count" class="form-control"/>
+<button class="btn btn-primary" (click)="onIncrement()">Increment</button>
+<button class="btn btn-secondary" (click)="onReset()">Reset</button>
+<button class="btn btn-danger" (click)="onDecrement()">Decrement</button>
+</div>
+<div>
+    <div (mouseenter)="handleEvent($event)" class="event-class-one"></div>
+</div>
+<div>
+    <div (mouseleave)="handleEvent($event)" class="event-class-two"></div>
+</div>
+<input [(ngModel)]="nameInput" (focus)="handleFocus($event)" (blur)="handleBlur($event)"/>
+<button (click)="showValue()">Show value</button>
+<p>{{name}}</p>
