@@ -1,0 +1,66 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="search city" name="city" [(ngModel)]="cityName"/>
+  </form>
+</div>
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    @if (weatherData.main.temp > 15) {
+    <img src="https://wallpaperaccess.com/full/10584992.jpg" alt="" />
+    } @else {
+    <img src="https://wallpaperaccess.com/full/1163658.jpg" alt="" />
+    }
+    <div class="weather-data">
+      <div class="location">{{weatherData.name}}</div>
+      <div class="temperature">{{weatherData.main.temp|number:'1.0-0'}}°C</div>
+    </div>
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More information
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://static.vecteezy.com/system/resources/previews/012/806/416/large_2x/3d-cartoon-weather-icon-snow-clouds-and-snowflakes-sign-isolated-on-transparent-background-3d-render-illustration-png.png" />
+          <span>min</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.main.temp_min|number:'1.0-0'}}°C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://static.vecteezy.com/system/resources/previews/020/716/723/original/3d-minimal-weather-forecast-concept-partly-cloudy-in-the-morning-weather-icon-3d-illustration-png.png" />
+          <span>max</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.main.temp_max|number:'1.0-0'}}°C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/012/488/183/small_2x/rain-in-3d-render-for-graphic-asset-web-presentation-or-other-png.png" />
+          <span>humidity</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.main.humidity}}%
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/010/851/638/small_2x/3d-illustration-stormy-rain-png.png" />
+          <span>Wind</span>
+        </div>
+        <div class="info-block-value">
+          {{weatherData.main.pressure}} km/h
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet />
