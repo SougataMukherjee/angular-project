@@ -29,6 +29,9 @@ export class Todo {
       localStorage.setItem("todos",JSON.stringify(this.todos))
       }
     }
+    removeAllTodo(){
+      this.todos=[]
+    }
     addTodo(todo:{ sno: number; title: string; desc: string; active: boolean }){
       console.log(todo)
       this.todos.push(todo)

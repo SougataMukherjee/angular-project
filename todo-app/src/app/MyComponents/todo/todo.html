@@ -4,4 +4,5 @@
     <div *ngFor="let todo of todos">
         <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
     </div>
+    <button class="btn btn-sm btn-danger" (click)="removeAllTodo()">deleteAllTodo</button>
 </ng-template>
