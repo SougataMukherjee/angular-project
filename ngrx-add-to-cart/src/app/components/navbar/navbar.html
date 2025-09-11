@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <h2>🛒 Flipkart Shop</h2>
+  <!-- Make the whole div clickable -->
+  <div class="cart-summary" (click)="togglePopup()">
+    <span>Items: {{ cartCount$ | async }}</span> |
+    <span>Total: ${{ cartTotal$ | async }}</span>
+  </div>
+</nav>
+
+<!-- Popup renders  -->
+<ng-container *ngIf="popupVisible">
+  <app-cart-popup
+    [items]="(cartItems$ | async) ?? []"
+    [total]="(cartTotal$ | async) ?? 0"
+    [close]="togglePopup.bind(this)">
+  </app-cart-popup>
+</ng-container>

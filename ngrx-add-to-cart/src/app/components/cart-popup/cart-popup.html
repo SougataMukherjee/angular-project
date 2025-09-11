@@ -1,0 +1,20 @@
+<div class="popup-backdrop" (click)="close()"></div>
+
+<div class="popup">
+  <h3>Your Cart</h3>
+
+  <div class="cart-items">
+    <div *ngFor="let item of items" class="cart-item">
+      <img [src]="item.image" alt="{{ item.title }}" width="50" />
+      <div class="info">
+        <span>{{ item.title }}</span>
+        <small>Qty: {{ item.quantity }} | ${{ item.price }}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <strong>Total: ${{ total }}</strong>
+    <button (click)="close()">Close</button>
+  </div>
+</div>
