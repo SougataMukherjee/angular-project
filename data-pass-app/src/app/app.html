@@ -1,0 +1,8 @@
+
+<app-home (getChildData)="handleChildData($event)" data="common header"></app-home>
+<app-profile (getChildData)="handleChildData($event)" data="common header"></app-profile>
+<router-outlet />
+
+@for(data of stream;track data){
+  <h5>{{data}}</h5>
+}
