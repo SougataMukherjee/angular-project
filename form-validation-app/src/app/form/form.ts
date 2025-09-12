@@ -10,7 +10,7 @@ import { multiPatternEmailValidator } from '../utils/validators';
   templateUrl: './form.html',
   styleUrls: ['./form.scss']
 })
-export class FormComponent {
+export class Form {
   form;
 
   constructor(private fb: FormBuilder) {

@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { FormComponent } from './form/form';
+import { Form } from './form/form';
 
 @Component({
   selector: 'app-root',
-  imports: [FormComponent],
+  imports: [Form],
   standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.scss'
