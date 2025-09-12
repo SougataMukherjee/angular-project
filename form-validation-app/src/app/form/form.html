@@ -1,0 +1,40 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="name?.touched && name?.invalid" class="error">
+      <div *ngIf="name?.errors?.['required']">Name is required.</div>
+      <div *ngIf="name?.errors?.['minlength']">Name must be at least 2 characters.</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" />
+    <div *ngIf="email?.touched && email?.invalid" class="error">
+      <div *ngIf="email?.errors?.['required']">Email is required.</div>
+      <div *ngIf="email?.errors?.['emailPattern']">{{ email?.errors?.['emailPattern'] }}</div>
+      <div *ngIf="email?.errors?.['disposableEmail']">{{ email?.errors?.['disposableEmail'] }}</div>
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+    <div *ngIf="password?.touched && password?.invalid" class="error">
+      <div *ngIf="password?.errors?.['required']">Password is required.</div>
+      <div *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters.</div>
+    </div>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" formControlName="acceptTos" /> Accept Terms
+    </label>
+    <div *ngIf="acceptTos?.touched && acceptTos?.invalid" class="error">
+      You must accept the terms.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>

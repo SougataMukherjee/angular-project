@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+/* global minimal styles */
+:root {
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --muted: #6b7280;
+  --bg: #f8fafc;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 2rem;
+  background: var(--bg);
+  color: #111827;
+}
+
+/* card */
+.card {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* inputs */
+label { display:block; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.9rem; }
+input, button {
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  box-sizing: border-box;
+}
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* small helper text */
+.helper { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+.error { color: var(--danger); font-size: 0.85rem; margin-top: 0.25rem; }
+
+/* submit */
+button { background: var(--primary); color: white; border: none; cursor: pointer; }
+button[disabled] { opacity: 0.6; cursor: not-allowed; }
